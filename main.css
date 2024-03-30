@@ -37,3 +37,16 @@ div.menu:hover {
     background-color: #1ffbffae;
     box-shadow: 0 0 15px #10ecf076;
 }
+footer{
+    background-color: #44dee3b0;
+    color: #0b437b76;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+main{
+    margin: 10px 20px 100px
+}
