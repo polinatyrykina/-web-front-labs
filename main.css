@@ -1,6 +1,21 @@
-body {
+body{
     background-color: lightblue;
     color: darkblue;
     font-family: Arial;
     margin: 0px;
+}
+a:link{
+    color: rgb(1, 175, 255);
+}
+a:visited{
+    color: rgb(45, 35, 162);
+   
+}
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+a:active{
+    color: black;
+    opacity: 0.3;
 }
