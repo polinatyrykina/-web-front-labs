@@ -4,16 +4,23 @@ body{
     font-family: Arial;
     margin: 0px;
 }
+
+a{
+    color: rgb(0, 38, 255);
+    text-decoration: none;
+    transition: 1s 2s;
+}
 a:link{
-    color: rgb(1, 175, 255);
+    color: rgb(22, 255, 1);
 }
 a:visited{
-    color: rgb(45, 35, 162);
+    color: rgb(22, 114, 54);
    
 }
 a:hover{
-    color: blue;
+    color: rgb(242, 49, 207);
     text-decoration: underline;
+    transition: 0,3s;
 }
 a:active{
     color: black;
