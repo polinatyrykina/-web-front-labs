@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 4"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div {
+            position: relative;
+            width: 300px;
+            height: 70px;
+            background-color: white ;
+            border: 1px dotted rgb(33, 218, 251);
+            margin: 15px;
+            text-align: center;
+            line-height: 70px;
+            z-index: 2;
+        }
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: 1;
+        }
+        .position-relative:hover {
+            position: relative;
+            z-index: 3;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;  
+        }
+        .position-absolute:hover {
+            width: 350px;
+            height: 100px;
+            background-color: rgb(121, 200, 214);
+            text-shadow: 4px 3px 3px rgb(0,0,255,0.5)
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    <main>
+       <div>static</div>
+       <div>static</div>
+       <div class="position-relative">relative</div>
+       <div>static</div>
+       <div>static</div>
+       <div class="position-absolute">absolute</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+       <div>static</div>
+    </main>
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
