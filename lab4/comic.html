@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 4"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div {
+            position: relative;
+            width: 150px;
+            height: 80px;
+            line-height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 50px;
+            background-color: white;
+            border: 1px dotted rgb(0, 68, 100);
+            z-index: 4;
+            top: -920px;
+            left: 20px;
+            box-shadow: 30px black;
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        img:hover + .one {  
+            opacity: 1;  
+        }  
+        .one:hover ~ .two {  
+            opacity: 1;  
+        }
+        .two:hover ~ .three {  
+            opacity: 1;  
+        }
+        .three:hover ~ .text {  
+            opacity: 1;  
+        }  
+
+
+        .one {
+            position: relative;
+            width: 70px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px dotted rgb(0, 18, 100);
+            z-index: 1;
+            top: -580px;
+            left: 120px;
+        }
+        .two {
+            position: relative;
+            width: 100px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px dotted rgb(0, 18, 100);
+            z-index: 2;
+            top: -680px;
+            left: 70px;
+        }
+        .three {
+            position: relative;
+            width: 130px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px dotted rgb(0, 18, 100);
+            z-index: 3;
+            top: -790px;
+            left: 30px;
+        }
+        .text {
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    <main>
+        <img src="kitti.jpg" height="700">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="text">hello</div>
+    </main>
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
