@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Тырыкина Полина Анатольевна. Лабораторная 5</title> 
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head> 
+<script> 
+    function showSum() { 
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
+        let a = parseInt(inputA.value); 
+        let b = parseInt(inputB.value); 
+        let result = a + b ; 
+        alert('Сумма ' + a + ' и ' + b + ' равна '+ result); 
+    } 
+    
+     
+    function showAuthor() { 
+        let author = 'Автор страницы:\nТырыкина Полина Анатольевна'; 
+        alert(author); 
+    } 
+    function hello() { 
+        let hei = 'Приветствую вас на моей странице! Добро пожаловать!'; 
+        alert(hei); 
+    } 
+    function checkInput(id) {
+        let input = document.getElementById(id);
+        if (input.value < 0) {
+                input.value = 0;
+        }
+    }
+    function calculateTotal() {
+        let pearsPrice = 80;
+        let applesPrice = 40;
+        let orangesPrice = 120;
+        let melonPrice = 250;
+        
+        let pearsQty = parseInt(document.getElementById('pearsQty').value) || 0;
+        let applesQty = parseInt(document.getElementById('applesQty').value) || 0;
+        let orangesQty = parseInt(document.getElementById('orangesQty').value) || 0;
+        let melonQty = parseInt(document.getElementById('melonQty').value) || 0;
+
+
+        // Вычисляем общую сумму
+        let totalPears = pearsPrice * pearsQty;
+        let totalApples = applesPrice * applesQty;
+        let totalOranges = orangesPrice * orangesQty;
+        let totalMelon = melonPrice * melonQty;
+
+        let totalPrice = totalPears + totalApples + totalOranges + totalMelon;
+
+        // Выводим результат
+        let output = document.getElementById('output');
+        output.textContent = "Общая сумма покупок: " + totalPrice + " рублей";
+    }
+
+    function clearCart() {
+            document.getElementById('pearsQty').value = '';
+            document.getElementById('applesQty').value = '';
+            document.getElementById('orangesQty').value = '';
+            document.getElementById('melonQty').value = '';
+
+            let output = document.getElementById('output');
+            output.textContent = '';
+        }
+</script> 
+ 
+<style> 
+</style> 
+ 
+<body> 
+    <header onclick="showAuthor()", style="cursor: pointer;"> 
+        НГТУ, ФБ, Лабораторная работа 5 
+    </header> 
+ 
+    <main> 
+        <h1>Корзина Товаров</h1> 
+        
+            <label>Груши (80р/шт): </label>
+        <div style="padding: 3px; margin: 2px;">
+            <input type="number" id="pearsQty" placeholder="Количество" oninput="checkInput('pearsQty')"><br>
+        </div>
+        
+        
+            <label>Яблоки (40р/шт): </label>
+        <div style="padding: 3px; margin: 2px;">
+            <input type="number" id="applesQty" placeholder="Количество" oninput="checkInput('applesQty')"><br>
+        </div>
+        
+            <label>Апельсины (120р/шт): </label>
+        <div style="padding: 3px; margin: 2px;">
+            <input type="number" id="orangesQty" placeholder="Количество" oninput="checkInput('orangesQty')"><br>
+        </div>
+        
+            <label>Дыня (250р/шт): </label>
+        <div style="padding: 3px; margin: 2px;">
+            <input type="number" id="melonQty" placeholder="Количество" oninput="checkInput('melonQty')"><br>
+        </div>
+
+        <button onclick="calculateTotal()" style="padding: 3px; margin: 2px;">Рассчитать общую сумму</button>
+        <button onclick="clearCart()">Очистить</button>
+ 
+        <div id="output"></div> 
+    </main> 
+ 
+    <footer ondblclick="hello()",  style="cursor: pointer;"> 
+        &copy; Тырыкина Полина ФБИ-23 курс, 2024 
+    </footer> 
+ 
+</body> 
+</html>
