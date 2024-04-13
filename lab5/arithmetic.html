@@ -11,32 +11,32 @@
 </head> 
 <script> 
     function showSum() { 
-        let inputA = document.getElementById('numberA')
-        let inputB = document.getElementById('numberB')
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
         let a = parseInt(inputA.value); 
         let b = parseInt(inputB.value); 
         let result = a + b ; 
         alert('Сумма ' + a + ' и ' + b + ' равна '+ result); 
     } 
     function showdiff() { 
-        let inputA = document.getElementById('numberA')
-        let inputB = document.getElementById('numberB')
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
         let a = parseInt(inputA.value); 
         let b = parseInt(inputB.value); 
         let result = a - b ; 
         alert('Разность ' + a + ' и ' + b + ' равна '+ result); 
     } 
     function showmult() { 
-        let inputA = document.getElementById('numberA')
-        let inputB = document.getElementById('numberB')
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
         let a = parseInt(inputA.value); 
         let b = parseInt(inputB.value); 
         let result = a / b ; 
         alert('Частное' + a + ' и ' + b + ' равна '+ result);
     } 
     function showdiv() { 
-        let inputA = document.getElementById('numberA')
-        let inputB = document.getElementById('numberB')
+        let inputA = document.getElementById('numberA');
+        let inputB = document.getElementById('numberB');
         let a = parseInt(inputA.value); 
         let b = parseInt(inputB.value); 
         let result = a * b ; 
@@ -51,6 +51,13 @@
         let hei = 'Приветствую вас на моей странице! Добро пожаловать!'; 
         alert(hei); 
     } 
+    function changeOutput(buttonNum, backColor, textColor, bordcol) {
+        let output = document.getElementById('output');
+        output.innerHTML = 'Нажата кнопка' + buttonNum;
+        output.style.backgroundColor = backColor;
+        output.style.color = textColor;
+        output.style.borderColor= bordcol; 
+    }
 </script> 
  
 <style> 
@@ -64,7 +71,12 @@
         border-radius: 4px; 
         border-color: rgb(93, 194, 189); 
     } 
- 
+    #output {
+        border: 2px solid;
+        width: 300px;
+        height: 40px;
+        border-color: aqua;
+    }
 </style> 
  
 <body> 
@@ -75,11 +87,22 @@
     <main> 
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
         <div class="message" onclick="showdiff()">Найти разность чисел</div> 
         <div class="message" onclick="showmult()">Найти частное чисел</div> 
         <div class="message" onclick="showdiv()">Найти произведение чисел</div>  
+
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div> 
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'blue', 'white','white')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(1, 'white', 'blue','aqua')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(1, 'pink', 'white', 'white')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(1, 'white', 'pink','magenta')">
+        </div>
+
+        <div id="output"></div>
     </main> 
  
     <footer ondblclick="hello()",  style="cursor: pointer;"> 
