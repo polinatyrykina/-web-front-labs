@@ -39,20 +39,22 @@
         let applesPrice = 40;
         let orangesPrice = 120;
         let melonPrice = 250;
+        let watermelonPrice = 250
         
         let pearsQty = parseInt(document.getElementById('pearsQty').value) || 0;
         let applesQty = parseInt(document.getElementById('applesQty').value) || 0;
         let orangesQty = parseInt(document.getElementById('orangesQty').value) || 0;
         let melonQty = parseInt(document.getElementById('melonQty').value) || 0;
-
+        let watermelonQty = parseInt(document.getElementById('watermelonQty').value) || 0;
 
         // Вычисляем общую сумму
         let totalPears = pearsPrice * pearsQty;
         let totalApples = applesPrice * applesQty;
         let totalOranges = orangesPrice * orangesQty;
         let totalMelon = melonPrice * melonQty;
+        let totalWatermelon = watermelonPrice * watermelonQty;
 
-        let totalPrice = totalPears + totalApples + totalOranges + totalMelon;
+        let totalPrice = totalPears + totalApples + totalOranges + totalMelon+ totalWatermelon;
 
         // Выводим результат
         let output = document.getElementById('output');
@@ -64,6 +66,7 @@
             document.getElementById('applesQty').value = '';
             document.getElementById('orangesQty').value = '';
             document.getElementById('melonQty').value = '';
+            document.getElementById('watermelonQty').value = '';
 
             let output = document.getElementById('output');
             output.textContent = '';
@@ -100,6 +103,11 @@
             <label>Дыня (250р/шт): </label>
         <div style="padding: 3px; margin: 2px;">
             <input type="number" id="melonQty" placeholder="Количество" oninput="checkInput('melonQty')"><br>
+        </div>
+
+        <label>Арбуз (250р/шт): </label>
+        <div style="padding: 3px; margin: 2px;">
+            <input type="number" id="watermelonQty" placeholder="Количество" oninput="checkInput('watermelonQty')"><br>
         </div>
 
         <button onclick="calculateTotal()" style="padding: 3px; margin: 2px;">Рассчитать общую сумму</button>
