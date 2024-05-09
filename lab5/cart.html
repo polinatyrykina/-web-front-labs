@@ -47,7 +47,7 @@
         let melonQty = parseInt(document.getElementById('melonQty').value) || 0;
         let watermelonQty = parseInt(document.getElementById('watermelonQty').value) || 0;
 
-        // Вычисляем общую сумму
+
         let totalPears = pearsPrice * pearsQty;
         let totalApples = applesPrice * applesQty;
         let totalOranges = orangesPrice * orangesQty;
@@ -56,7 +56,7 @@
 
         let totalPrice = totalPears + totalApples + totalOranges + totalMelon+ totalWatermelon;
 
-        // Выводим результат
+    
         let output = document.getElementById('output');
         output.textContent = "Общая сумма покупок: " + totalPrice + " рублей";
     }

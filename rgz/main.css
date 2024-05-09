@@ -1,0 +1,46 @@
+body{
+    background-color: lightblue;
+    color: darkblue;
+    font-family: Arial;
+    margin: 0px;
+}
+
+a{
+    color: rgb(11, 28, 127);
+    text-decoration: none;
+    transition: 1s 2s;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+a:link{
+    color: rgb(255, 255, 255);
+}
+a:visited{
+    color: rgb(184, 206, 255);
+   
+}
+a:hover{
+    color: rgba(0, 13, 255, 0.482);
+    text-decoration: underline;
+    transition: 0,3s;
+
+}
+div.menu {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(26, 73, 127);
+    border-top: 1px solid #140975;
+    transition: transform 0.3s ease;
+    width: 100%;
+    display: table;
+}
+div.menu:hover {
+    transform: translateX(-50%) scale(1.2);
+}
