@@ -71,6 +71,18 @@
             document.getElementById('result').innerHTML = '';
 
     }
+    function toggleRules() {
+        let rulesBtn = document.getElementById('rulesBtn');
+        let rulesText = document.getElementById('rulesText');
+
+        if (rulesBtn.innerHTML === 'Показать правила игры') {
+            rulesBtn.innerHTML = 'Скрыть правила игры';
+            rulesText.style.display = 'block';
+        } else {
+            rulesBtn.innerHTML = 'Показать правила игры';
+            rulesText.style.display = 'none';
+        }
+    }
 
 </script>
 <body>
@@ -105,6 +117,19 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <div>
+            <button id="rulesBtn" onclick="toggleRules()">Показать правила игры</button>
+            <div id="rulesText" style="display: none;">
+                <p>Правила игры:</p>
+                <ol type="I">
+                    <li>Компьютер загадывает случайное число от 1 до 100.</li>
+                    <li>Вам нужно угадать это число, вводя свои предположения в поле ввода.</li>
+                    <li>После каждой попытки вам будет показано, больше или меньше загаданное число.</li>
+                    <li>Игра продолжается до тех пор, пока вы не угадаете число.</li>
+                    <li>После угадывания вам будет показано количество попыток, которое вы использовали.</li>
+                </ol>
             </div>
         </div>
 
