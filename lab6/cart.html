@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Тырыкина Полина Анатольевна.Лабораторная работа 6"</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+    </head>
+    <script>
+        function itog() {
+            const prices = [90, 160, 40, 55, 150, 80, 250]; 
+            let total = 0;
+            let allEmptyOrZero = true; 
+            const counts = document.querySelectorAll('.item-count');
+
+            for (let i = 0; i < counts.length; i++) {
+                const countValue = counts[i].value.trim();
+                const count = parseInt(countValue, 10);
+
+                if (countValue && count > 0) {
+                    allEmptyOrZero = false;
+                    total += prices[i] * count;
+                } else if (count < 0) {
+                    document.getElementById('result').innerText = "Количество не может быть отрицательным!";
+                    return;
+                }
+            }
+
+            if (allEmptyOrZero) {
+                document.getElementById('result').innerText = "Выберите хотя бы один товар";
+                return;
+            }
+
+            const balance = parseFloat(document.getElementById('Balance').value);
+            if (total > balance) {
+                document.getElementById('result').innerText = "Недостаточно средств. Покупка совершается на сумму:" + total + " руб.";
+            } else {
+                document.getElementById('result').innerText = "Покупка успешно оформлена на сумму:" + total + " руб.";
+            }
+        }
+</script>
+<body>
+<header>
+    НГТУ, ФБ, Лабораторная работа 6
+</header>
+
+<main>
+    <div>
+        Баланс:
+        <input type="number" value="" min="0" id="Balance">
+    </div>
+<div class="cart">
+        <table border = '1' width = "40%">
+            <tr>
+                <td></td>
+                <td><b>Название</b></td>
+                <td><b>Цена</b></td>
+                <td><b>Количество</b></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>90 р</td>
+                <td><input type="number" class="item-count" id="milkCount"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Сок яблочный</td>
+                <td>160 р</td>
+                <td><input type="number" class="item-count" id="juceCount"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Хлеб</td>
+                <td>40 р</td>
+                <td><input type="number" class="item-count" id="breadCount"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Булочка с курицей</td>
+                <td>55 р</td>
+                <td><input type="number" class="item-count" id="bbreadCount"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Пюре с кабачком</td>
+                <td>150 р</td>
+                <td><input type="number" class="item-count" id="pCount"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Гречка</td>
+                <td>80 р</td>
+                <td><input type="number" class="item-count" id="gCount"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Сардины</td>
+                <td>250р</td>
+                <td><input type="number" class="item-count" id="sardCount"></td>
+            </tr>
+        </table>
+    </div>
+<div>
+        <button onclick="itog()">OK</button>
+        <div id="result" style="margin-top: 30px;"></div> 
+    </div>
+</main>
+
+<footer>
+    &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+</footer>
+</body>
+</html>
