@@ -8,6 +8,25 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
 </head>
+<style>
+    .circle-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    
+</style>
 <script>
     function addNewBlock() {
         let newBlock = document.createElement('div');
@@ -49,6 +68,22 @@
             main.appendChild(newBlock);
         }
     }
+    function add10_80() {
+        let main = document.querySelector('main');
+        let circleContainer = document.createElement('div');
+        circleContainer.classList.add('circle-container');
+
+        for (let i = 10; i >= -80; i -= 3) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.textContent = i;
+            circleContainer.appendChild(circle);
+        }
+
+        main.appendChild(circleContainer);
+    }
+    
+
 </script>
 <body>
     <header>
@@ -59,6 +94,8 @@
         <input type="number" id="blocksCount" placeholder="Количество блоков">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20=>50</button>
+        <button onclick="add10_80()">10 => -80</button>
+        
     </main>
     <footer>
         &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
