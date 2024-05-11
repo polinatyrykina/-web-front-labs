@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 7"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<script>
+    let isButtonClicked = false; 
+    function showExchange() {
+        if (isButtonClicked) {
+            return;
+        }
+        const exchange = [
+            91.8239, 91.1231, 91.3124, 91.6981, 92.0538, 91.7791, 
+            92.0134, 92.1314, 92.5058, 93.2918
+        ];
+        let table = document.getElementById('dollar-table');
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+                sum += exchange[i];
+            }
+        let average = sum / exchange.length;
+        average = average.toFixed(2);
+        let detailDiv = document.getElementById('detail');
+        detailDiv.innerText = `Среднее значение: ${average}`;
+
+        let button = document.getElementById('dollarButton');
+        button.style.display = 'none';
+
+        isButtonClicked = true; 
+    }
+</script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button id="dollarButton"  onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-table"></table>
+        <div id="detail"></div>
+    </main>
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
