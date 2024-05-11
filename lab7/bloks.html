@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 7"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<script>
+    function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'aqua';
+            newBlock.style.height = '40px';
+            newBlock.style.width = '80px';
+            newBlock.style.border = '1px solid blue';
+            newBlock.style.margin = '20px';
+            document.querySelector('main').appendChild(newBlock);
+        }
+
+</script>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="addNewBlock()">Добавить блок</button>
+    </main>
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
