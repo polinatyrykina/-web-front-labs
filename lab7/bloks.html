@@ -34,7 +34,16 @@
             text-align: center;
             line-height: 50px;
             color: rgb(193, 230, 254);
-        }
+    }
+    .col1 {
+        background-color: rgb(255, 108, 245);
+        color: white;
+    }
+
+    .col2 {
+        background-color: rgb(47, 0, 255);
+        color: white;
+    }
 </style>
 <script>
     function addNewBlock() {
@@ -103,7 +112,24 @@
             main.appendChild(block);
         }
     }
-
+    function addColoredCircles() {
+        let main = document.querySelector('main');
+        let circleContainer = document.createElement('div');
+        circleContainer.classList.add('circle-container');
+        let circlesCount = document.getElementById('circlesCount').value;
+        for (let i = circlesCount; i > 0; i--) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            if (i % 2 === 0) {
+                circle.classList.add('col1');
+            } else {
+                circle.classList.add('col2');
+            }
+            circle.textContent = i;
+            circleContainer.appendChild(circle);
+        }
+        main.appendChild(circleContainer);
+    }
 </script>
 <body>
     <header>
@@ -116,6 +142,8 @@
         <button onclick="add20_50()">20=>50</button>
         <button onclick="add10_80()">10 => -80</button>
         <button onclick="addOpacityBlocks()">Добавить блоки с opacity</button> 
+        <input type="number" id="circlesCount" placeholder="Количество кругов">
+        <button onclick="addColoredCircles()">Цветные круги (синий/розовый)</button>
     </main>
     <footer>
         &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
