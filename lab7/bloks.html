@@ -18,7 +18,22 @@
             newBlock.style.margin = '20px';
             document.querySelector('main').appendChild(newBlock);
         }
-
+    function addNewBlocks() {
+        let main = document.querySelector('main');
+        let blocksCount = document.getElementById('blocksCount').value;
+        let initialWidth = 80; 
+        let widthIncrement = 20;
+        for (let i = 0; i < blocksCount; i++) {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'aqua';
+            newBlock.style.height = '40px';
+            newBlock.style.width = `${initialWidth + i * widthIncrement}px`;
+            newBlock.style.border = '1px solid blue';
+            newBlock.style.margin = '20px'
+            newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
+            main.appendChild(newBlock);
+        }
+        }
 </script>
 <body>
     <header>
@@ -26,6 +41,8 @@
     </header>
     <main>
         <button onclick="addNewBlock()">Добавить блок</button>
+        <input type="number" id="blocksCount" placeholder="Количество блоков">
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
     <footer>
         &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
