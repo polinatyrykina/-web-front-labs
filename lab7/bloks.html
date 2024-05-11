@@ -25,7 +25,16 @@
         align-items: center;
         margin: 5px;
     }
-    
+    .opacity-block {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(14, 34, 165);
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            color: rgb(193, 230, 254);
+        }
 </style>
 <script>
     function addNewBlock() {
@@ -82,7 +91,18 @@
 
         main.appendChild(circleContainer);
     }
-    
+    function addOpacityBlocks() {
+        let main = document.querySelector('main');
+        let opacityStep = 0.1;
+
+        for (let i = 1; i <= 10; i++) {
+            let block = document.createElement('div');
+            block.classList.add('opacity-block');
+            block.style.opacity = opacityStep * i;
+            block.textContent = i;
+            main.appendChild(block);
+        }
+    }
 
 </script>
 <body>
@@ -94,7 +114,8 @@
         <input type="number" id="blocksCount" placeholder="Количество блоков">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20=>50</button>
-        <button onclick="add10_80()">10 => -80</button> 
+        <button onclick="add10_80()">10 => -80</button>
+        <button onclick="addOpacityBlocks()">Добавить блоки с opacity</button> 
     </main>
     <footer>
         &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
