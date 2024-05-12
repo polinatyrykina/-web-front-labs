@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 7"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+</head>
+<style>
+    #weather-forecast {
+        border: 1px solid #2294ff;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+<script>
+    async function getWeatherForecast() {
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+        const response = await fetch(url);
+        const data = await response.json();
+        const today = new Date();
+        const forecast = data.hourly.time.map((time, index) => {
+            const date = new Date(time);
+            if (date.getDate() === today.getDate()) {
+                if (date.getHours() === 8) {
+                    return `В 8 часов утра: ${data.hourly.temperature_2m[index]} °C`;
+                } else if (date.getHours() === 12) {
+                    return `В 12 часов дня: ${data.hourly.temperature_2m[index]} °C`;
+                } else if (date.getHours() === 20) {
+                    return `В 20 часов вечера: ${data.hourly.temperature_2m[index]} °C`;
+                }
+            }
+            return '';
+        }).filter(item => item !== '');
+
+        const weatherForecastDiv = document.getElementById('weather-forecast');
+        weatherForecastDiv.innerHTML = `
+            <h2>Прогноз погоды на сегодня</h2>
+            ${forecast.join('<br>')}
+            <p>Источник данных: <a href="https://open-meteo.com/" target="_blank">open-meteo.com</a></p>
+        `;
+    }
+</script>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+        <div id="weather-forecast"></div>
+    </main>
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
