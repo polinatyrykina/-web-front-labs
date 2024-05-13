@@ -32,6 +32,54 @@
         padding: 10px;
         margin-bottom: 20px;
     }
+    .icon-panel {
+    width: 50%;
+    position: fixed;
+    transform: translateX(-50%);
+    bottom: 0px;
+    left: 50%;
+    background-color: darkblue;
+    text-align: center;
+    padding: 10px;
+    transition:height 0.3s ease;
+    height: 40px;
+    overflow: hidden;
+}
+
+.icon-panel:hover {
+    transform: translateX(-50%) scale(1.2);
+}
+
+.icon-panel a {
+    display: inline-block;
+    margin: 0px 10px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.icon-panel a img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-panel a span {
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(68, 134, 255);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.icon-panel a:hover span {
+    display: block;
+}
         
 </style>
 <body>
@@ -65,7 +113,7 @@
             </div>
         </div>
     <footer>
-        <div class="icon-panel" style=" left: 50%; position: fixed; transform: translateX(-50%); ">
+        <div class="icon-panel">
             <a href="companiya.html" title="О Компании"><img src="favicon1.ico" alt="О Компании"><span>О Компании</span></a>
             <a href="news.html" title="Новости"><img src="favicon2.ico" alt="Новости"><span>Новости</span></a>
             <a href="values.html" title="Курс Валют"><img src="favicon3.ico" alt="Курс Валют"><span>Курс Валют</span></a>

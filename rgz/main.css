@@ -26,39 +26,6 @@ a:hover{
 
 }
 
-.menu {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    background-color:rgb(23, 23, 119);
-    width: 50%; 
-    display: flex;
-    justify-content: center;
-    
-}
-
-.menu li {
-    float: left;
-}
-
-.menu li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.menu li a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.menu li.active a {
-    background-color: #4CAF50;
-}
 
 /* Стили для панели с иконками */
 .icon-panel {

@@ -207,7 +207,7 @@
     <script>
         // Выделение текущей страницы в меню
         var currentPage = window.location.pathname.split("/").pop();
-        var menuLinks = document.querySelectorAll(".main-menu li a");
+        var menuLinks = document.querySelectorAll(".menu li a");
         menuLinks.forEach(function(link) {
             if (link.getAttribute("href") === currentPage) {
                 link.parentNode.classList.add("active");
