@@ -3,38 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Курс валют</title>
     <link rel="stylesheet" href="main.css">
-    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+   
 </head>
-<body>
-    <header>
-        <link rel="stylesheet" href="main2.css">
+<style>
+    .panel{
+        text-decoration-color: white;
+        background-color:  rgb(219, 232, 250);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    .company-info {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: justify;
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    .calculator {
+        border: 1px solid #155fff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
         
-    </header>
-    <mainf></main>
+</style>
+<body>
+    <header><h1><b>БКС. Управление благосостоянием</b></h1></header>
+    <main сlass="company">
+        <div class="panel">Курс валют</div>
+        <div class="company-info">
+            <div class="calculator">
+                <h3 style="text-align: center;">Курс турецкой лиры на сегодня</h3>
+                <div id="rate"></div>
+        
+                <h3>Конвертер</h3>
+                <label for="amount">Сумма:</label>
+                <input type="number" id="amount" value="1">
+        
+                <label for="from-currency">Из валюты:</label>
+                <select id="from-currency">
+                    <option value="RUB">Рубль (RUB)</option>
+                    <option value="TRY">Турецкая лира (TRY)</option>
+                </select>
+        
+                <label for="to-currency">В валюту:</label>
+                <select id="to-currency">
+                    <option value="TRY">Турецкая лира (TRY)</option>
+                    <option value="RUB">Рубль (RUB)</option>
+                </select>
+        
+                <button onclick="convertCurrency()">Конвертировать</button>
+        
+                <div id="result"></div>
+            </div>
+        </div>
     <footer>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a href="companiya.html" style="text-decoration: none;">О компании</a>
-                </li>
-                <li>
-                    <a href="news.html" style="text-decoration: none;">Новости</a>
-                </li>
-                <li>
-                    <a href="values.html" style="text-decoration: none;">Курс Валют</a>
-                </li>
-                <li>
-                    <a href="contacts.html" style="text-decoration: none;">Контактные данные</a>
-                </li>
-                <li>
-                    <a href="video.html" style="text-decoration: none;">Видео</a>
-                </li>
-            </ul>
+        <div class="icon-panel" style=" left: 50%; position: fixed; transform: translateX(-50%); ">
+            <a href="companiya.html" title="О Компании"><img src="favicon1.ico" alt="О Компании"><span>О Компании</span></a>
+            <a href="news.html" title="Новости"><img src="favicon2.ico" alt="Новости"><span>Новости</span></a>
+            <a href="values.html" title="Курс Валют"><img src="favicon3.ico" alt="Курс Валют"><span>Курс Валют</span></a>
+            <a href="contacts.html" title="Контактные данные"><img src="favicon4.ico" alt="Контактные данные"><span>Контактные данные</span></a>
+            <a href="video.html" title="Видео"><img src="favicon5.ico" alt="Видео"><span>Видео</span></a>
         </div>
     </footer>
+    <script>
+        // Выделение текущей страницы в меню
+        var currentPage = window.location.pathname.split("/").pop();
+        var menuLinks = document.querySelectorAll(".icon-panel li a");
+        menuLinks.forEach(function(link) {
+            if (link.getAttribute("href") === currentPage) {
+                link.parentNode.classList.add("active");
+            }
+        });
+        // Получение курса турецкой лиры
+        fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+            .then(response => response.json())
+            .then(data => {
+                const rates = data.Valute;
+                const rateElement = document.getElementById('rate');
+                const tryRate = rates.TRY;
+                rateElement.textContent = `1 TRY = ${tryRate.Value} RUB`;
+            })
+            .catch(error => console.error(error));
 
+        // Конвертация валют
+        function convertCurrency() {
+            const amount = document.getElementById('amount').value;
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
 
+            fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+                .then(response => response.json())
+                .then(data => {
+                    const rates = data.Valute;
+                    const tryRate = rates.TRY.Value;
+
+                    if (fromCurrency === 'RUB') {
+                        const convertedAmount = amount / tryRate;
+                        document.getElementById('result').textContent = `${amount} RUB = ${convertedAmount.toFixed(2)} TRY`;
+                    } else {
+                        const convertedAmount = amount * tryRate;
+                        document.getElementById('result').textContent = `${amount} TRY = ${convertedAmount.toFixed(2)} RUB`;
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+    </script>
 </body>
 </html>

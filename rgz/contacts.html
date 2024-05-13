@@ -3,38 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Контактные данные</title>
     <link rel="stylesheet" href="main.css">
-    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+   
 </head>
-<body>
-    <header>
-        <link rel="stylesheet" href="main2.css">
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<>" type="text/javascript"></script>
+<style>
+    .panel{
+        text-decoration-color: white;
+        background-color:  rgb(219, 232, 250);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    .company-info {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: justify;
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         
-    </header>
-    <mainf></main>
+</style>
+<body>
+    <header><h1><b>БКС. Управление благосостоянием</b></h1></header>
+    <main сlass="company">
+        <div class="panel">Контактные данные</div>
+        <div class="company-info">
+                <u>Адрес места осуществления лицензируемого вида деятельности:</u><br>
+                129110, город Москва, Проспект Мира, дом 69, строение 1, этаж 3, пом.3-07</p>
+    
+                <p>Место нахождения:<br>
+                <p>129110, город Москва, Проспект Мира, дом 69, строение 1, подъезд №2, этаж 3, офис 3-07</p>
+    
+                <p>Пн.-Пт. 09:00–17:00,<br>
+                Обед: 13:00–14:00,<br>
+                Выходной: суббота, воскресенье</p>
+    
+                <p>В офисе установлен пропускной режим; встречи с клиентами осуществляются по предварительной записи по телефонам, указанным ниже.</p>
+    
+                <p><u>Служба клиентского сервиса</u></p>
+    
+                <p><li>Пн.-Пт. 8:00–18:00,<br>Выходной: суббота, воскресенье</li></p>
+    
+                <p><li>Тел.: +7 (495) 723-7674</li><br>
+                <li>+7 (800) 200 90 58 - бесплатные звонки по России</li></p>
+    
+                <p>Электронный адрес: info@bcswm.ru<br>
+                Контакты для СМИ: pr@bcswm.ru</p>
+    
+                <div id="map" style="width: 800px; height: 600px; margin-left: auto;margin-right: auto;" ></div>
+                <script>
+                    ymaps.ready(init);
+                    function init() {
+                        var myMap = new ymaps.Map("map", {
+                            center: [55.786408537567034, 37.63425774854775],
+                            zoom: 16
+                        });
+    
+                        var myPlacemark = new ymaps.Placemark([55.773804, 37.618671], {}, {
+                            iconLayout: 'default#image',
+                            iconImageHref: 'marker.png',
+                            iconImageSize: [30, 42],
+                            iconImageOffset: [-15, -42]
+                        });
+    
+                        myMap.geoObjects.add(myPlacemark);
+                    }
+                </script>
+            </div>
+    </main>
     <footer>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a href="companiya.html" style="text-decoration: none;">О компании</a>
-                </li>
-                <li>
-                    <a href="news.html" style="text-decoration: none;">Новости</a>
-                </li>
-                <li>
-                    <a href="values.html" style="text-decoration: none;">Курс Валют</a>
-                </li>
-                <li>
-                    <a href="contacts.html" style="text-decoration: none;">Контактные данные</a>
-                </li>
-                <li>
-                    <a href="video.html" style="text-decoration: none;">Видео</a>
-                </li>
-            </ul>
+        <div class="icon-panel">
+            <a href="companiya.html" title="О Компании"><img src="favicon1.ico" alt="О Компании"><span>О Компании</span></a>
+            <a href="news.html" title="Новости"><img src="favicon2.ico" alt="Новости"><span>Новости</span></a>
+            <a href="values.html" title="Курс Валют"><img src="favicon3.ico" alt="Курс Валют"><span>Курс Валют</span></a>
+            <a href="contacts.html" title="Контактные данные"><img src="favicon4.ico" alt="Контактные данные"><span>Контактные данные</span></a>
+            <a href="video.html" title="Видео"><img src="favicon5.ico" alt="Видео"><span>Видео</span></a>
         </div>
     </footer>
 
-
+    <script>
+        // Выделение текущей страницы в меню
+        var currentPage = window.location.pathname.split("/").pop();
+        var menuLinks = document.querySelectorAll(".main-menu li a");
+        menuLinks.forEach(function(link) {
+            if (link.getAttribute("href") === currentPage) {
+                link.parentNode.classList.add("active");
+            }
+        });
+    </script>
 </body>
 </html>
