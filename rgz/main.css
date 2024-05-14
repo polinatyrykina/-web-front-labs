@@ -35,7 +35,7 @@ a:hover{
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: darkblue;
+    background-color: rgb(25, 0, 255);
     text-align: center;
     padding: 10px;
     transition:height 0.3s ease;
@@ -66,7 +66,7 @@ a:hover{
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgb(68, 134, 255);
+    background-color:  rgb(68, 134, 255);
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -82,7 +82,19 @@ h1{
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color: rgb(219, 232, 250); 
+    background-color: rgb(255, 255, 255); 
     padding: 20px;
     margin-top: 1px;
+}
+p{
+    font-weight: 400;
+}
+.panel{
+    color: rgb(255, 255, 255);
+    background-color:  rgb(25, 0, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
 }
