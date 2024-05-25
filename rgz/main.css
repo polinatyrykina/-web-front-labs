@@ -30,11 +30,9 @@ a:hover{
 /* Стили для панели с иконками */
 .icon-panel {
     width: 50%;
-    position: relative;
+    position: fixed;
     bottom: 0px;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
+    left: 25%;
     background-color: rgb(25, 0, 255);
     text-align: center;
     padding: 10px;
