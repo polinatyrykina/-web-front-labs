@@ -9,7 +9,19 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script src="time.js" defer></script>
 </head>
-
+<style>
+    #time1 {
+        width: 5px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background-color: aqua;
+        position: relative;
+        transform-origin: bottom center;
+        transition: transform 1s linear;
+    }
+</style>
 <body onload="showTime()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
@@ -18,6 +30,7 @@
     </header>
     <main>
         <div id="seconds" style="font-size: 100px; text-align: center; margin-top: 50px;"></div>
+    <div id="time1"></div>
     </main>
     <footer>
         &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
