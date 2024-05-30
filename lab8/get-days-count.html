@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тырыкина Полина Анатольевна.Лабораторная работа 8"</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js" defer></script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div>
+            <label>Дата рождения: <input type="date" id="birthdate"></label>
+        </div>
+        <div>
+            <button onclick="showDaysCount()" style="margin: 10px; background-color: rgb(241, 241, 255); 
+            border-color: rgb(122, 190, 250); border-radius: 350px;">Показать число дней</button>
+            <button onclick="clearFields()" style="margin: 10px; background-color: rgb(241, 241, 255); 
+            border-color: rgb(122, 190, 250); border-radius: 350px;">Очистить</button>
+        </div>
+        <div id="days-count"></div>
+    </main>
+
+    <footer>
+        &copy; Тырыкина Полина, ФБИ-23, 2 курс, 2024
+    </footer>
+</body>
+</html>
